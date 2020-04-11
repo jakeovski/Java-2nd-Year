@@ -8,7 +8,7 @@ import java.util.Scanner;
  */
 public class MainApp {
     public static int nCompares; 
-    public static int nAssigns; 
+    public static int nAssigns;
     
     public static void main(String[] args) {
         /* un-comment a line at a time and run to observe what each method does */ 
