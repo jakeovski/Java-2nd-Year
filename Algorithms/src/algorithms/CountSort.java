@@ -20,9 +20,11 @@ public class CountSort {
         //For loop for finding max and min values
         for (int i = 0; i < a.length; i++) {
             if (a[i] < min) {
+                TestClass.nCompares++;
                 min = a[i];
             }
             if (a[i] > max) {
+                TestClass.nCompares++;
                 max = a[i];
             }
         }
@@ -38,6 +40,7 @@ public class CountSort {
         for (int i = 0; i < frequencies.length; i++) {
             for (int j = 0; j < frequencies[i]; j++) {
                 a[outPos++] = i + min;
+                TestClass.nAssigns++;
             }
         }
     }

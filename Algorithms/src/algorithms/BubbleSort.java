@@ -11,8 +11,9 @@ package algorithms;
  */
 public class BubbleSort {
 
-    public void bubbleSort(Integer[] a) {
+    public static void bubbleSort(Integer[] a) {
         Integer temp;
+        TestClass.nSpace++;
         //ex: a = new Integer[]{6,4,3,9,7,10,2};
         //we go through array and swap elements. need to iterate through array
         // if 6 > 4, then 6 becomes 4 and 4 becomes 6
@@ -25,9 +26,11 @@ public class BubbleSort {
             //for array like: a = new Integer[]{6,4,3,9,7,10,2};
             for (int j = 0; j < a.length - 1 - iteration; j++) {
                 if (a[j] > a[j + 1]) {
+                    TestClass.nCompares2++;
                     temp = a[j];
                     a[j] = a[j + 1];
                     a[j + 1] = temp;
+                    TestClass.nAssigns2 += 3;
                 }
             }
         }
