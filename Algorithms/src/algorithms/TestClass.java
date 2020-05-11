@@ -6,8 +6,7 @@
 package algorithms;
 
 import java.awt.EventQueue;
-import java.util.Arrays;
-import java.util.Random;
+
 
 /**
  * Main class that does everything from testing algorithms to plotting graphs
@@ -56,7 +55,7 @@ public class TestClass {
         EventQueue.invokeLater(() -> {
             //Initialise Graph
             //For plotting countSort graph index is 0, for bubbleSort index in 1
-            var ex = new Graph(complexityTest(), 0);
+            var ex = new Graph(complexityTest(), 1);
             //Set true
             ex.setVisible(true);
         });
@@ -97,12 +96,17 @@ public class TestClass {
             //Getting average values and adding them to Count Sort complexity array
             double comp = 1.0 * TestClass.nCompares / numOfReps;
             double assign = 1.0 * TestClass.nAssigns / numOfReps;
+            //System.out.println("Average comparisons: " + comp);
+            //System.out.println("Average Assignments: " + assign);
             countComplexity[s] = comp + assign;
 
             //Getting the average values and adding them to Bubble Sort complexity array
             double comp2 = 1.0 * TestClass.nCompares2 / numOfReps;
             double assign2 = 1.0 * TestClass.nAssigns2 / numOfReps;
             double space = 1.0 * TestClass.nSpace / numOfReps;
+            //System.out.println("Average Space: " + space);
+            //System.out.println("Average Comparisons: " + comp2);
+            //System.out.println("Average Assignments: " + assign2);
             bubbleComplexity[s] = comp2 + assign2 + space;
         }
         //Outputting the result
