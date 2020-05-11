@@ -7,15 +7,18 @@ package cm2100.part3;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedList;
 
 /**
- *
- * @author K. Hui
+ * Main Class 
+ * @author K. Hui // Modified by Vladimir Bardadom 1807132
  */
 public class Main {
 
     public static void main(String[] args) {
+        //*************************************************************
 //        //------------------------Parcel class test-----------------
+        //*********************************************************
 //        
 //        Parcel first = new Parcel("Vladimir", "Union Street 148", 5.2);
 //        //-----------------------Getters----------------------------
@@ -64,7 +67,77 @@ public class Main {
 //        for (int i = 0; i < ar.size(); i++) {
 //            System.out.println(ar.get(i));
 //        }
-         //-----------------------ToString method----------------------
+        //-----------------------ToString method----------------------
 //         System.out.println(porter.toString());
+        //********************************************************
+        //-----------------------Task 6.3-------------------------
+        //********************************************************
+        //List 1
+        //Declaring and initializing ArrayList
+        ArrayList<Driver> drivers = new ArrayList<>();
+        //--------------------------------------------
+        //Drivers
+        Driver porter1 = new Driver("Sam Bridges");
+        Driver porter2 = new Driver("Fragile");
+        Driver porter3 = new Driver("Mads Mikkelsen");
+        //--------------------------------------------
+        //Adding them to ArrayList
+        drivers.add(porter1);
+        drivers.add(porter2);
+        drivers.add(porter3);
+        //-----------------------
+        //Printing
+        System.out.println("-------Unsorted-----------------");
+        for (int i = 0; i < drivers.size(); i++) {
+            System.out.println(drivers.get(i));
+        }
+        //-------------------------------------------------------
+
+        //List 2
+        //Declaring and initializing LinkedList
+        LinkedList<Driver> drivers2 = new LinkedList<>();
+        //-------------------------------------
+        //Drivers
+        Driver porter4 = new Driver("Heartman");
+        Driver porter5 = new Driver("Guillermo del Toro");
+        Driver porter6 = new Driver("Higgs");
+        //-----------------------------------
+        //Adding them to LinkedList
+        drivers2.add(porter4);
+        drivers2.add(porter5);
+        drivers2.add(porter6);
+        //-------------------------
+        //Printing
+        System.out.println("Linked List: \n" + drivers2);
+        //-----------------------------------------------
+        //Adding elements from list 2 to list 1
+        for (Driver d : drivers2) {
+            drivers.add(d);
+        }
+        //---------------------------------------
+        //Printing
+        System.out.println("-------Unsorted-----------------");
+        for (int i = 0; i < drivers.size(); i++) {
+            System.out.println(drivers.get(i));
+        }
+        //---------------------------------------------------
+        //Sorting the list in alphabetical order then printing the result
+        Collections.sort(drivers);
+        System.out.println("-------Sorted-----------------");
+        for (int i = 0; i < drivers.size(); i++) {
+            System.out.println(drivers.get(i));
+        }
+        //----------------------------------------------------
+        //Sorting the list in reverse order and printing the results
+        Collections.sort(drivers, Collections.reverseOrder());
+        System.out.println("-------Reverse Sorted-----------------");
+        for (int i = 0; i < drivers.size(); i++) {
+            System.out.println(drivers.get(i));
+        }
+        //------------------------------------------------------
+
+        //***************************************************************
+        //-------------------------6.4-----------------------------------
+        //***************************************************************
     } //end method
 } //end class
