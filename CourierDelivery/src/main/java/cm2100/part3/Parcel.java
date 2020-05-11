@@ -96,6 +96,7 @@ public class Parcel {
      * toString method
      * @return String representation of the Field
      */
+    @Override
     public String toString() {
         return "Parsel Info:\nRecepient: " + this.recipient + 
                 "\nAddress: " + this.address + 
