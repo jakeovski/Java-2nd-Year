@@ -26,6 +26,7 @@ public class Driver implements Comparable<Driver> {
 
     /**
      * Constructor for the Driver class
+     *
      * @param name Name of the driver
      */
     public Driver(String name) {
@@ -36,6 +37,7 @@ public class Driver implements Comparable<Driver> {
     //----------------------------Getters----------------------------------
     /**
      * Gets the name of the driver
+     *
      * @return Name of the driver
      */
     public String getName() {
@@ -44,6 +46,7 @@ public class Driver implements Comparable<Driver> {
 
     /**
      * Gets the number of parcels
+     *
      * @return Number of parcels
      */
     public int getNumberParcels() {
@@ -53,6 +56,7 @@ public class Driver implements Comparable<Driver> {
     //---------------------------Setters----------------------------------
     /**
      * Sets the name of the driver
+     *
      * @param name New name for the driver // String
      */
     public void setName(String name) {
@@ -61,6 +65,7 @@ public class Driver implements Comparable<Driver> {
 
     /**
      * Sets the number of parcels
+     *
      * @param numberParcels New number of parcels
      */
     public void setNumberParcels(int numberParcels) {
@@ -77,10 +82,11 @@ public class Driver implements Comparable<Driver> {
 
     /**
      * Compares two driver by their names
+     *
      * @param another Second driver to compare to
-     * @return Negative number if the first driver is before second one in alphabetic order
-     *         0 if they start with the same letter
-     *         Positive number if first driver is after second one in alphabetic order
+     * @return Negative number if the first driver is before second one in
+     * alphabetic order 0 if they start with the same letter Positive number if
+     * first driver is after second one in alphabetic order
      */
     @Override
     public int compareTo(Driver another) {
@@ -92,8 +98,8 @@ public class Driver implements Comparable<Driver> {
     }
 
     /**
-     * Inner class which compares workloads of two drivers
-     * The one with less parcels goes before the ones with more workload
+     * Inner class which compares workloads of two drivers The one with less
+     * parcels goes before the ones with more workload
      */
     class CompareDriverLoad implements Comparator<Driver> {
 
@@ -105,12 +111,25 @@ public class Driver implements Comparable<Driver> {
 
     /**
      * toString method
+     *
      * @return Information in the field
      */
     @Override
     public String toString() {
-        return "Driver details:\nName: " + this.name
-                + "\nNumber of Parcels: " + this.numberParcels;
+        return "\n------------------\nDriver details:\nName: " + this.name
+                + "\nNumber of Parcels: " + this.numberParcels + "\n------------------";
+    }
+
+    /**
+     * '
+     * Override of the default hashCode method of the Driver class
+     *
+     * @return Value derived by applying the existing hashCode method to name
+     * property of the Driver
+     */
+    @Override
+    public int hashCode() {
+        return name.hashCode();
     }
 
 } //end Driver
